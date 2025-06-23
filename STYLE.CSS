@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  background: #101820;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #1c1c1c;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+.teams {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.team h2 {
+  font-size: 1.5rem;
+  cursor: text;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #00c853;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #00e676;
+}
+
+.reset {
+  background-color: #d32f2f;
+}
+
+.reset:hover {
+  background-color: #e53935;
+.team li {
+  padding: 4px 0;
+}
+#match-history {
+  list-style: square;
+  padding-left: 20px;
+  color: #333;
+}
+#match-history li {
+  margin: 5px 0;
+}

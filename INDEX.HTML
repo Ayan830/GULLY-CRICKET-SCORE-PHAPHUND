@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gully Cricket Live Score</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏏 Gully Cricket Live Score</h1>
+
+    <div class="teams">
+      <div class="team">
+        <h2 contenteditable="true" id="teamNameA" oninput="saveData()">Team A</h2>
+        <p>Runs: <span id="runsA">0</span> / Wickets: <span id="wicketsA">0</span></p>
+        <button onclick="addRun('A')">+1 Run</button>
+        <button onclick="addWicket('A')">+1 Wicket</button>
+
+        <h3>Players</h3>
+        <ul id="playersA" contenteditable="true" oninput="saveData()">
+          <li>Player A1</li>
+          <li>Player A2</li>
+        </ul>
+      </div>
+
+      <div class="team">
+        <h2 contenteditable="true" id="teamNameB" oninput="saveData()">Team B</h2>
+        <p>Runs: <span id="runsB">0</span> / Wickets: <span id="wicketsB">0</span></p>
+        <button onclick="addRun('B')">+1 Run</button>
+        <button onclick="addWicket('B')">+1 Wicket</button>
+
+        <h3>Players</h3>
+        <ul id="playersB" contenteditable="true" oninput="saveData()">
+          <li>Player B1</li>
+          <li>Player B2</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Overs: <span id="overs">0.0</span></p>
+    <button onclick="addBall()">+1 Ball</button>
+    <br><br>
+    <button onclick="resetMatch()" class="reset">Reset Match</button>
+  </div>
+<p id="status">Loading live score...</p>
+<p>4s: <span id="foursA">0</span> | 6s: <span id="sixesA">0</span></p>
+<button onclick="addFour('A')">+4</button>
+<button onclick="addSix('A')">+6</button>
+<p>4s: <span id="foursB">0</span> | 6s: <span id="sixesB">0</span></p>
+<button onclick="addFour('B')">+4</button>
+<button onclick="addSix('B')">+6</button>
+<div><h3>Players (Team A)</h3>
+<ul id="playersA" contenteditable="true" oninput="saveData()">
+  <li>Player A1 🏏</li>
+  <li>Player A2 🏏</li>
+  <li>Player A3 🏏</li>
+  <li>Player A4 🏏</li>
+  <li>Player A5 🏏</li>
+  <li>Player A6 🏏</li>
+  <li>Player A7 🏐</li>
+  <li>Player A8 🏐</li>
+  <li>Player A9 🏐</li>
+  <li>Player A10 🏐</li>
+  <li>Player A11 🏐</li>
+</ul>
+
+<div<h3>Players (Team B)</h3>
+<ul id="playersB" contenteditable="true" oninput="saveData()">
+  <li>Player B1 🏏</li>
+  <li>Player B2 🏏</li>
+  <li>Player B3 🏏</li>
+  <li>Player B4 🏏</li>
+  <li>Player B5 🏏</li>
+  <li>Player B6 🏏</li>
+  <li>Player B7 🏐</li>
+  <li>Player B8 🏐</li>
+  <li>Player B9 🏐</li>
+  <li>Player B10 🏐</li>
+  <li>Player B11 🏐</li>
+</ul>
+<hr />
+<h2>📊 Match History</h2>
+<ul id="match-history"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
