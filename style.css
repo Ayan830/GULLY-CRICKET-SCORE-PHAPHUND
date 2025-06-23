@@ -50,3 +50,11 @@ button:hover {
 .team li {
   padding: 4px 0;
 }
+#match-history {
+  list-style: square;
+  padding-left: 20px;
+  color: #333;
+}
+#match-history li {
+  margin: 5px 0;
+}

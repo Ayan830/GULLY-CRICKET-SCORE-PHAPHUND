@@ -110,3 +110,47 @@ setInterval(fetchLiveMatches, 30000);
 
 // Load saved match data when page loads
 window.onload = loadData;
+// Get match history from localStorage on load
+const matchHistoryList = document.getElementById("match-history");
+let matchHistory = JSON.parse(localStorage.getItem("matchHistory")) || [];
+
+// Render old matches
+function renderMatchHistory() {
+  matchHistoryList.innerHTML = "";
+  matchHistory.forEach((match, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${match.date} - ${match.teamA} vs ${match.teamB} → ${match.winner} won by ${match.margin}`;
+    matchHistoryList.appendChild(li);
+  });
+}
+renderMatchHistory();
+
+// Function to save match after reset or end
+function saveMatchToHistory(teamA, teamB, winner, margin) {
+  const today = new Date().toLocaleDateString();
+  matchHistory.unshift({
+    date: today,
+    teamA,
+    teamB,
+    winner,
+    margin
+  });
+  localStorage.setItem("matchHistory", JSON.stringify(matchHistory));
+  renderMatchHistory();
+}
+
+// ✨ Example use:
+document.getElementById("resetButton").addEventListener("click", () => {
+  // Before resetting everything, save match:
+  const teamA = document.getElementById("teamAname").textContent;
+  const teamB = document.getElementById("teamBname").textContent;
+  const scoreA = parseInt(document.getElementById("teamAscore").textContent);
+  const scoreB = parseInt(document.getElementById("teamBscore").textContent);
+
+  const winner = scoreA > scoreB ? teamA : teamB;
+  const margin = Math.abs(scoreA - scoreB) + " runs";
+
+  saveMatchToHistory(teamA, teamB, winner, margin);
+
+  // Then reset everything (your original code)
+});
